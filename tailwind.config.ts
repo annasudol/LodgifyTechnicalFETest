@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        midGray: '#333333',
-        successGreen: '#00B797',
-        lightGreen: '#F2FBFA',
-        greyScale: '#DDDDDD'
-      }
+        midGray: "#333333",
+        successGreen: "#00B797",
+        lightGreen: "#F2FBFA",
+        greyScale: "#DDDDDD",
+      },
     },
   },
   plugins: [],
