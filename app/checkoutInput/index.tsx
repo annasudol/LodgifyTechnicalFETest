@@ -1,27 +1,22 @@
 import React, { ChangeEvent, FC } from "react";
 import cn from "classnames";
 
-interface Props  {
+interface Props {
   identifier: string;
   title: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  defaultChecked: boolean;
+  checked: boolean;
 }
 
-const CheckoutInput: FC<Props> = ({
-  identifier,
-  defaultChecked,
-  title,
-  onChange,
-}) => {
+const CheckoutInput: FC<Props> = ({ identifier, checked, title, onChange }) => {
   return (
     <label>
       <input
         type="checkbox"
-        value={title}
+        value={identifier}
         id={identifier}
         onChange={onChange}
-        checked={defaultChecked}
+        checked={checked}
       />
       {title}
     </label>

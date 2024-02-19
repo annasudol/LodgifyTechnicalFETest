@@ -4,37 +4,31 @@ import CheckoutInput from "@/app/checkoutInput";
 type IAccordionProps = {
   title: string;
   tasks: ITaskItem[];
+  updateTask: (id1: string, id2: string) => void;
 };
-const Accordion: React.FC<IAccordionProps> = ({ title, tasks }) => {
+const Accordion: React.FC<IAccordionProps> = ({ title, tasks, updateTask }) => {
   const [expanded, setExpanded] = useState(false);
   const toggleExpanded = () => setExpanded((current) => !current);
-  // console.log(tasks, "tasks");
-  const handleChange=(e)=> {
-    const tasksItem = tasks.filter((t) => t.description === e.target.value)[0]
-      .checked;
-      console.log(tasks, "t")
-  }
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    updateTask(e.currentTarget.value[0], e.currentTarget.value);
+  };
   return (
     <div
       // className="my-2 sm:my-4 md:my-6 shadow-sm cursor-pointer bg-white"
       onClick={toggleExpanded}
     >
-      <div className="px-6 text-left items-center h-20 select-none flex justify-between flex-row">
+      <div className="px-6">
         <h5 className="flex-1">{title}</h5>
         {/* <div className="flex-none pl-2">{expanded ? minusIcon : plusIcon}</div> */}
         <form className="flex flex-col">
-          {tasks.map((task, index) => {
-            const id = `${index}${task.description}`;
+          {tasks.map((task) => {
             return (
               <CheckoutInput
-                identifier={id}
-                key={id}
+                identifier={task.id}
+                key={task.id}
                 title={task.description}
                 onChange={handleChange}
-                defaultChecked={
-                  tasks.filter((t) => t.description === task.description)[0]
-                    .checked
-                }
+                checked={tasks.filter((t) => t.id === task.id)[0].checked}
               />
             );
           })}

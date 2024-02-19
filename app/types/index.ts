@@ -2,8 +2,10 @@ export interface ITaskItem {
   description: string;
   value: number;
   checked: boolean;
+  id: string;
 }
 export interface ITaskGroup {
   name: string;
-  tasks: ITaskItem[];
+  id: string;
+  tasks: { [index: string]: ITaskItem };
 }

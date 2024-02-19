@@ -4,11 +4,35 @@ import { useState, useEffect } from "react";
 import data from "./data.json";
 import { ITaskGroup } from "@/app/types";
 export default function Home() {
-  const [task, setTask] = useState<ITaskGroup[]>();
+  const [task, setTask] = useState<{ [i: string]: ITaskGroup }>({});
   useEffect(() => {
-    return setTask(data);
+    const dataObj = data.reduce((acc, value, index) => {
+      return {
+        ...acc,
+        [index.toString()]: {
+          ...value,
+          id: index,
+          tasks: value.tasks.reduce((a, t, i) => {
+            return { ...a, [`${index}${i}`]: { ...t, id: `${index}${i}` } };
+          }, {}),
+        },
+      };
+    }, {});
+    setTask(dataObj);
   }, []);
-
+  const handleUpdate = (id1: string, id2: string) => {
+    const taskUpdated: ITaskGroup = {
+      ...task[id1],
+      tasks: {
+        ...task[id1].tasks,
+        [id2]: {
+          ...task[id1].tasks[id2],
+          checked: !task[id1].tasks[id2].checked,
+        },
+      },
+    };
+    setTask({ ...task, [id1]: taskUpdated });
+  };
   return (
     <main className="bg-white max-w-xl mx-auto p-2 my-8 rounded-md">
       <div className="p-6">
@@ -22,10 +46,14 @@ export default function Home() {
           ></div>
         </div>
       </div>
-      {task?.map((t: ITaskGroup) => (
-        <Accordion title={t.name} tasks={t.tasks} />
+      {Object.values(task).map((t: ITaskGroup) => (
+        <Accordion
+          key={t.id}
+          title={t.name}
+          tasks={Object.values(t.tasks || {})}
+          updateTask={handleUpdate}
+        />
       ))}
-      {/* <Accordion /> */}
     </main>
   );
 }
