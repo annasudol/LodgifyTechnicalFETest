@@ -1,7 +1,7 @@
 "use client";
 import Accordion from "@/app/accordion";
 import { useState, useEffect, useMemo } from "react";
-import data from "@/app/data.json";
+import data from "@/data.json";
 import { ITaskGroup } from "@/app/types";
 export default function Home() {
   const [totalPoints, setTotalPoints] = useState<number>(1);
