@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ITaskItem } from "@/app/types";
 import CheckoutInput from "@/app/checkoutInput";
+import Image from "next/image";
 type IAccordionProps = {
   title: string;
   tasks: ITaskItem[];
@@ -23,7 +24,7 @@ const Accordion: React.FC<IAccordionProps> = ({ title, tasks, updateTask }) => {
       onClick={toggleExpanded}
     >
       <div className="px-6">
-        <h5 className="flex-1">{title}</h5>
+        <h5 className="flex"><Image src="doc.svg" width={16} height={16} alt="doc icon" className="mr-2"  />{title}</h5>
         {/* <div className="flex-none pl-2">{expanded ? minusIcon : plusIcon}</div> */}
         <form className="flex flex-col">
           {tasks.map((task) => {
