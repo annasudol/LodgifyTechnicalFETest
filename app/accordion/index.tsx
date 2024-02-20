@@ -4,13 +4,18 @@ import CheckoutInput from "@/app/checkoutInput";
 type IAccordionProps = {
   title: string;
   tasks: ITaskItem[];
-  updateTask: (id1: string, id2: string) => void;
+  updateTask: (id1: string, id2: string, isChecked: boolean) => void;
 };
 const Accordion: React.FC<IAccordionProps> = ({ title, tasks, updateTask }) => {
   const [expanded, setExpanded] = useState(false);
   const toggleExpanded = () => setExpanded((current) => !current);
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    updateTask(e.currentTarget.value[0], e.currentTarget.value);
+    console.log(e.currentTarget.checked, "e");
+    updateTask(
+      e.currentTarget.value[0],
+      e.currentTarget.value,
+      e.currentTarget.checked,
+    );
   };
   return (
     <div
