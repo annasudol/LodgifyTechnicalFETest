@@ -1,9 +1,9 @@
-import { AccordionItem as Item } from "@szhsin/react-accordion";
+import { AccordionItem as Item, AccordionItemProps } from "@szhsin/react-accordion";
 import Image from "next/image";
 /**
  * @type {React.ExoticComponent<import('@szhsin/react-accordion').AccordionItemProps>}
  */
-interface AccordionItem {
+interface AccordionItem extends AccordionItemProps {
   title: string;
 }
 const AccordionItem: React.FC<AccordionItem> = ({ title, ...rest }) => (
