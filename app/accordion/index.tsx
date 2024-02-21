@@ -1,6 +1,5 @@
-import { ITaskGroup, ITaskItem } from "@/app/types";
+import { ITaskGroup } from "@/app/types";
 import useData from "../provider/DataContext";
-import { useState } from "react";
 import { Accordion } from "@szhsin/react-accordion";
 import AccordionItem from "@/app/accordionItem";
 import CheckoutInput from "@/app/checkoutInput";

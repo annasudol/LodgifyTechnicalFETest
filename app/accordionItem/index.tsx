@@ -3,6 +3,7 @@ import {
   AccordionItemProps,
 } from "@szhsin/react-accordion";
 import Image from "next/image";
+import classNames from "classnames";
 /**
  * @type {React.ExoticComponent<import('@szhsin/react-accordion').AccordionItemProps>}
  */
@@ -14,13 +15,25 @@ const AccordionItem: React.FC<AccordionItem> = ({ title, ...rest }) => (
     {...rest}
     header={({ state: { isEnter } }) => (
       <div className="flex justify-between w-full">
-        {title}
-        <div className="flex">
-          <span className="text-sm mr-1">{isEnter ? "Hide" : "Show"}</span>
+        <p className="flex text-customGrey-300">
           <Image
-            className={`ml-auto transition-transform duration-200 ease-out ${
-              isEnter && "rotate-180"
-            }`}
+            width={15}
+            height={15}
+            src="doc.svg"
+            alt="doc"
+            className="mr-2"
+          />
+          {title}
+        </p>
+        <div className="flex">
+          <span className="text-sm mr-1 text-customGrey-200">
+            {isEnter ? "Hide" : "Show"}
+          </span>
+          <Image
+            className={classNames(
+              "ml-auto transition-transform duration-200 ease-out",
+              { isEnter: "rotate-180" },
+            )}
             width={15}
             height={15}
             src="arrow.svg"
