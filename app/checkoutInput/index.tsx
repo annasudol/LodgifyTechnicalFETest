@@ -10,7 +10,7 @@ interface Props {
 
 const CheckoutInput: FC<Props> = ({ identifier, checked, title, onChange }) => {
   return (
-    <label>
+    <label className="mt-2">
       <input
         type="checkbox"
         value={identifier}

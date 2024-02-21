@@ -302,6 +302,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@szhsin/react-accordion@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@szhsin/react-accordion@npm:1.2.3"
+  dependencies:
+    react-transition-state: ^2.1.1
+  peerDependencies:
+    react: ^16.14 || ^17.0 || ^18.0
+    react-dom: ^16.14 || ^17.0 || ^18.0
+  checksum: ab765dcf761911dff1211d52d51a8c78e9ac6bcc4e7bc04c7acddcecd497e1b71d5fdcc7c73a96e1a707727521db5e664785ca7549b7f408545ddf274c747221
+  languageName: node
+  linkType: hard
+
 "@types/json5@npm:^0.0.29":
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
@@ -2722,6 +2734,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nextjs@workspace:."
   dependencies:
+    "@szhsin/react-accordion": ^1.2.3
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18
@@ -3185,6 +3198,16 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-transition-state@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "react-transition-state@npm:2.1.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 6091d0c59a255b9ec47b6bfc8f766737bdb1a21bb15f0c738e0feef9efd20df5a3209699029cab2fcb18c99fa8ad97cdbce95ceabee9fe6c6dd8b98a11af00b5
   languageName: node
   linkType: hard
 

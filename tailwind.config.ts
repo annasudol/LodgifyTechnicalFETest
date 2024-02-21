@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        midGray: "#333333",
         successGreen: "#00B797",
         lightGreen: "#F2FBFA",
-        greyScale: "#DDDDDD",
+        customGrey: {
+          100: "#DDDDDD",
+          200: "#999999",
+          300: "#333333",
+        },
       },
     },
   },
