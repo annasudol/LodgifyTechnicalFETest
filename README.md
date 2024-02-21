@@ -1,5 +1,4 @@
-This is a Lodgify - FE Technical Challenge. 
-
+This is a Lodgify - FE Technical Challenge.
 
 The project was built with [Next.js](https://nextjs.org/)](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 A web link deployed with Vercel: [simpleform-flame.vercel.app](https://simpleform-flame.vercel.app/)
@@ -21,8 +20,6 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
 
 ## Learn More
 
