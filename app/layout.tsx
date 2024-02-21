@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { DataProvider, IDataContext } from "./provider/DataContext";
+import { DataProvider, IDataContext } from "@/app/provider/DataContext";
 import { FunctionComponent, PropsWithChildren } from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Simple form",

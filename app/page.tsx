@@ -1,5 +1,5 @@
 "use client";
-import AccordionUI from "@/app/accordion";
+import AccordionUI from "@/app/components/accordion";
 import { useMemo } from "react";
 import useData from "@/app/provider/DataContext";
 

@@ -21,7 +21,7 @@ const AccordionItem: React.FC<AccordionItem> = ({ title, ...rest }) => (
             height={15}
             src="doc.svg"
             alt="doc"
-            className="mr-2"
+            className="mr-2 w-auto h-auto"
           />
           {title}
         </p>
@@ -31,7 +31,7 @@ const AccordionItem: React.FC<AccordionItem> = ({ title, ...rest }) => (
           </span>
           <Image
             className={classNames(
-              "ml-auto transition-transform duration-200 ease-out",
+              "ml-auto transition-transform duration-200 ease-out w-auto h-auto",
               { isEnter: "rotate-180" },
             )}
             width={15}

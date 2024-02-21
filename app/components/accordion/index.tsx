@@ -1,8 +1,8 @@
 import { ITaskGroup } from "@/app/types";
-import useData from "../provider/DataContext";
+import useData from "@/app/provider/DataContext";
 import { Accordion } from "@szhsin/react-accordion";
-import AccordionItem from "@/app/accordionItem";
-import CheckoutInput from "@/app/checkoutInput";
+import AccordionItem from "@components//accordionItem";
+import CheckoutInput from "@components//checkoutInput";
 const AccordionUI = () => {
   const { tasks, handleUpdateTask } = useData();
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
