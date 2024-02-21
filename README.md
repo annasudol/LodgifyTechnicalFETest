@@ -1,10 +1,10 @@
 This is a Lodgify - FE Technical Challenge. 
 
 
-The project was build with [Next.js](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The project was built with [Next.js](https://nextjs.org/)](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 A web link deployed with Vercel: [simpleform-flame.vercel.app](https://simpleform-flame.vercel.app/)
 
-To complete that task I used Next.js with Typescript and Tailwind.
+To complete that task I used Next.js with Typescript and Tailwind. I tried to be as close as possible to the design but I couldn't find the font 'Source Sans Pro' free to download so I used similar.
 
 ## Getting Started
 
