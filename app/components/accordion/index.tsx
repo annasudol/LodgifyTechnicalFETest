@@ -20,30 +20,37 @@ const AccordionUI = () => {
         transitionTimeout={200}
         className="border-customGrey-100"
       >
-        {Object.values(tasks).map((t: ITaskGroup) => (
-          <AccordionItem
-            key={t.id}
-            title={t.name}
-            header={<span>{t.name}</span>}
-          >
-            <div className="flex flex-col">
-              {Object.values(t.tasks).map((task) => {
-                return (
-                  <CheckoutInput
-                    identifier={task.id}
-                    key={task.id}
-                    title={task.description}
-                    onChange={handleChange}
-                    checked={
-                      Object.values(t.tasks).filter((t) => t.id === task.id)[0]
-                        .checked
-                    }
-                  />
-                );
-              })}
-            </div>
-          </AccordionItem>
-        ))}
+        {Object.values(tasks).map((t: ITaskGroup) => {
+          const taskGroupIsNotCompleted = Boolean(
+            Object.values(t.tasks).filter((t) => !t.checked).length,
+          );
+          return (
+            <AccordionItem
+              key={t.id}
+              title={t.name}
+              header={<span>{t.name}</span>}
+              isCompleted={!taskGroupIsNotCompleted}
+            >
+              <div className="flex flex-col">
+                {Object.values(t.tasks).map((task) => {
+                  return (
+                    <CheckoutInput
+                      identifier={task.id}
+                      key={task.id}
+                      title={task.description}
+                      onChange={handleChange}
+                      checked={
+                        Object.values(t.tasks).filter(
+                          (t) => t.id === task.id,
+                        )[0].checked
+                      }
+                    />
+                  );
+                })}
+              </div>
+            </AccordionItem>
+          );
+        })}
       </Accordion>
     </div>
   );

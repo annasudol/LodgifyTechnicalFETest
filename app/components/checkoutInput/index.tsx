@@ -48,7 +48,6 @@ const CheckoutInput: FC<Props> = ({ identifier, checked, title, onChange }) => {
       </label>
     </div>
   );
- 
 };
 
 export default CheckoutInput;
