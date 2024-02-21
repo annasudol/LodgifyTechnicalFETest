@@ -9,3 +9,7 @@ export interface ITaskGroup {
   id: string;
   tasks: { [index: string]: ITaskItem };
 }
+
+export interface ITaskState {
+  [i: string]: ITaskGroup;
+}

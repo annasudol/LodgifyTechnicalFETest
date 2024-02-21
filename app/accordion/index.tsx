@@ -1,45 +1,19 @@
-import { useState } from "react";
-import { ITaskItem } from "@/app/types";
-import CheckoutInput from "@/app/checkoutInput";
-import Image from "next/image";
-type IAccordionProps = {
-  title: string;
-  tasks: ITaskItem[];
-  updateTask: (id1: string, id2: string, isChecked: boolean) => void;
-};
-const Accordion: React.FC<IAccordionProps> = ({ title, tasks, updateTask }) => {
-  const [expanded, setExpanded] = useState(false);
-  const toggleExpanded = () => setExpanded((current) => !current);
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    console.log(e.currentTarget.checked, "e");
-    updateTask(
-      e.currentTarget.value[0],
-      e.currentTarget.value,
-      e.currentTarget.checked,
-    );
-  };
+import { ITaskGroup, ITaskItem } from "@/app/types";
+import AccordionItem from "@/app/accordion/AccordionItem";
+import useData from "../provider/DataContext";
+
+const Accordion = () => {
+   const { tasks } = useData();
+
   return (
-    <div
-      // className="my-2 sm:my-4 md:my-6 shadow-sm cursor-pointer bg-white"
-      onClick={toggleExpanded}
-    >
-      <div className="px-6">
-        <h5 className="flex"><Image src="doc.svg" width={16} height={16} alt="doc icon" className="mr-2"  />{title}</h5>
-        {/* <div className="flex-none pl-2">{expanded ? minusIcon : plusIcon}</div> */}
-        <form className="flex flex-col">
-          {tasks.map((task) => {
-            return (
-              <CheckoutInput
-                identifier={task.id}
-                key={task.id}
-                title={task.description}
-                onChange={handleChange}
-                checked={tasks.filter((t) => t.id === task.id)[0].checked}
-              />
-            );
-          })}
-        </form>
-      </div>
+    <div>
+      {Object.values(tasks).map((t: ITaskGroup) => (
+        <AccordionItem
+          key={t.id}
+          title={t.name}
+          tasks={Object.values(t.tasks || {})}
+        />
+      ))}
     </div>
   );
 };
