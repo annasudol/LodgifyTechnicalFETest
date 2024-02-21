@@ -30,7 +30,7 @@ const ProgressBar = () => {
     </div>
   );
 }, [tasks, totalPoints]);
-  return <>{ProgressBar}</>;
+  return <>{progressBar}</>;
 };
 
 export default ProgressBar;
