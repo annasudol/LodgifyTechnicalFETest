@@ -15,16 +15,20 @@ const ProgressBar = () => {
           ),
         )
         .reduce((acc, item) => acc + item, 0);
+        const progressValue = (
+          ((totalCheckedPoints || 1) / totalPoints) *
+          100
+        ).toFixed(0);
     return (
       <div className="w-full bg-lightGreen rounded-full h-4 mb-4">
         <div
           className="bg-successGreen h-4 rounded-full relative"
           style={{
-            width: `${(((totalCheckedPoints || 1) / totalPoints) * 100).toFixed(2)}%`,
+            width: `${progressValue}%`,
           }}
         >
           <span className="text-white text-xs font-semibold absolute right-2">
-            {(((totalCheckedPoints || 1) / totalPoints) * 100).toFixed(0)}%
+            {progressValue}%
           </span>
         </div>
       </div>
