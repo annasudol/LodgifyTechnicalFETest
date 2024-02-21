@@ -1,4 +1,7 @@
-import { AccordionItem as Item, AccordionItemProps } from "@szhsin/react-accordion";
+import {
+  AccordionItem as Item,
+  AccordionItemProps,
+} from "@szhsin/react-accordion";
 import Image from "next/image";
 /**
  * @type {React.ExoticComponent<import('@szhsin/react-accordion').AccordionItemProps>}

@@ -22,7 +22,11 @@ const AccordionUI = () => {
         className="border-customGrey-100"
       >
         {Object.values(tasks).map((t: ITaskGroup) => (
-          <AccordionItem key={t.id} title={t.name} header={<span>{t.name}</span>}>
+          <AccordionItem
+            key={t.id}
+            title={t.name}
+            header={<span>{t.name}</span>}
+          >
             <div className="flex flex-col">
               {Object.values(t.tasks).map((task) => {
                 return (
